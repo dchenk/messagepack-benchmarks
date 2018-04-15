@@ -1,6 +1,7 @@
+// This is how you would do it using github.com/tinylib/msgp
 package mb
 
-// This is how you would do it using github.com/tinylib/msgp
+//go:generate msgp_tinylib
 
 type Struct1B struct {
 	Str          string            `msg:"str"`

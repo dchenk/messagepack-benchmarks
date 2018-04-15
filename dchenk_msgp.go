@@ -1,6 +1,7 @@
+// This is how you would do it using github.com/dchenk/msgp
 package mb
 
-// This is how you would do it using github.com/dchenk/msgp
+//go:generate msgp_dchenk
 
 type Struct1A struct {
 	Str          string            `msgp:"str"`
