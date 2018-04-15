@@ -29,7 +29,7 @@ func TestDchenkMsgp1(t *testing.T) {
 
 }
 
-// For some reason, reflect.DeepEqual does not work for the larger struct, so compare them manually.
+// Must check manually because of dynamic interface{} types inside.
 func TestDchenkMsgp2(t *testing.T) {
 
 	buf := new(bytes.Buffer)
