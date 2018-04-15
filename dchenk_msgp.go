@@ -54,7 +54,7 @@ var Struct2A_inst = Struct2A{
 	InnerStruct: InnerStructA{false, -132.88889},
 	Float64:     3.14159265359,
 	MapStrSlice: map[string][]int8{
-		"": {},
+		"": nil, // We must give a nil, not an allocated empty, slice to make deep equal comparison work.
 		"uiouoiyioutuuiouoiyioutuuiouoiyioutu": {0x32, 0x12, 0x78, 0x00, 0x76},
 		"RTQYWYEUIIUQIE": {0x32, 0x12, 0x78, 0x00, 0x76, 0x32, 0x12, 0x78, 0x00, 0x76, 0x32, 0x12, 0x78, 0x76,
 			0x32, 0x12, 0x78, 0x00, 0x76, 0x32, 0x12, 0x78, 0x00, 0x76, 0x32, 0x12, 0x78, 0x76, 0x32, 0x12, 0x78, 0x00, 0x76, 0x32,
@@ -68,6 +68,7 @@ var Struct2A_inst = Struct2A{
 			"oeiuwroewiro": float64(98.676),
 			"kl":           float32(-234.0),
 			"lkasdjf":      uint32(4294967290),
+			"ss":           []string{"h", "ksjldf"},
 		},
 		Str2: `hello
 there, this is a funky string. Tab: 	.`,
