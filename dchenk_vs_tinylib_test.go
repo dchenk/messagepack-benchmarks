@@ -51,3 +51,27 @@ func TestDchenkMsgp_TinylibMsgp_2(t *testing.T) {
 	}
 
 }
+
+func BenchmarkCustomDchenk1(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Struct1A_inst.MarshalMsg(nil)
+	}
+}
+
+func BenchmarkCustomTinylib1(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Struct1B_inst.MarshalMsg(nil)
+	}
+}
+
+func BenchmarkCustomDchenk2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Struct2A_inst.MarshalMsg(nil)
+	}
+}
+
+func BenchmarkCustomTinylib2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Struct2B_inst.MarshalMsg(nil)
+	}
+}
