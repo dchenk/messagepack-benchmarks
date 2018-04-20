@@ -32,3 +32,6 @@ up.
 Keep in mind also that the dchenk/msgp code generator is faster, and the runtime library dchenk/msgp/msgp
 is much smaller and leaner than the tinylib one--and safer, without unsafely converting memory holding
 `[]byte` to `string` type. More info here: [https://github.com/dchenk/msgp](https://github.com/dchenk/msgp)
+
+## Sizes of the two libraries
+In case you care about the size of your program (you should), the tinylib/msgp/msgp library compiled is 552K but dchenk/msgp/msgp compiled is 519K.
