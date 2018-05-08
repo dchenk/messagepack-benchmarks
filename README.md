@@ -18,10 +18,10 @@ the latest release.**
 ## Results
 This is what I get on my workstation (MacOS 10.13.3; 3.6 GHz Intel Core i7; 32 GB 2400 MHz DDR4):
 ```
-BenchmarkCustomDchenk1-8        10000000               198 ns/op             144 B/op          1 allocs/op
-BenchmarkCustomTinylib1-8       10000000               199 ns/op             144 B/op          1 allocs/op
-BenchmarkCustomDchenk2-8         1000000              1720 ns/op            1440 B/op          3 allocs/op
-BenchmarkCustomTinylib2-8        1000000              1761 ns/op            1440 B/op          3 allocs/op
+BenchmarkCustomDchenk1-8        10000000               217 ns/op             160 B/op          1 allocs/op
+BenchmarkCustomTinylib1-8       10000000               218 ns/op             160 B/op          1 allocs/op
+BenchmarkCustomDchenk2-8         1000000              1590 ns/op            1440 B/op          3 allocs/op
+BenchmarkCustomTinylib2-8        1000000              1779 ns/op            1440 B/op          3 allocs/op
 ```
 There is not a significant difference for small objects, but it gets noticeable with larger objects;
 dchenk/msgp performs better than tinylib/msgp. Also, I've noticed many times on my computer that the

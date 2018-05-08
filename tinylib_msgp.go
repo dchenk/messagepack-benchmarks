@@ -8,11 +8,14 @@ type Struct1B struct {
 	Slice        []byte            `msg:"slice"`
 	MapStrUint16 map[string]uint16 `msg:"map_str_uint16"`
 	InnerStruct  InnerStructB      `msg:"inner_struct"`
+	Bt           uint8             `msg:"bt"`
+	Int          int32             `msg:"int"`
 }
 
 type InnerStructB struct {
 	Bool    bool    `msg:"bool"`
 	Float32 float32 `msg:"float_32"`
+	Uint64  uint64  `msg:"u64"`
 }
 
 type Struct2B struct {
@@ -39,7 +42,8 @@ var Struct1B_inst = Struct1B{
 		"lasdhflahsdlfkhlasdf": 4,
 		"c": 1356,
 	},
-	InnerStruct: InnerStructB{true, 213.513},
+	InnerStruct: InnerStructB{true, 213.513, 7869},
+	Int:         42,
 }
 
 var Struct2B_inst = Struct2B{
@@ -51,7 +55,7 @@ var Struct2B_inst = Struct2B{
 		"ghijkl":       98,
 		"ghijklghijkl": 8000111333,
 	},
-	InnerStruct: InnerStructB{false, -132.88889},
+	InnerStruct: InnerStructB{false, -132.88889, 24},
 	Float64:     3.14159265359,
 	MapStrSlice: map[string][]int8{
 		"": nil, // We must give a nil, not an allocated empty, slice to make deep equal comparison work.
