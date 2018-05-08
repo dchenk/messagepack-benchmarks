@@ -16,12 +16,19 @@ like so: `cd $(go env GOPATH)/src/github.com/dchenk/msgp && go install`. Always 
 the latest release.**
 
 ## Results
-This is what I get on my workstation (MacOS 10.13.3; 3.6 GHz Intel Core i7; 32 GB 2400 MHz DDR4):
+This is what I get on my workstation (go1.10 darwin/amd64; MacOS 10.13.3; Intel Core i7; 32 GB DDR4):
 ```
 BenchmarkCustomDchenk1-8        10000000               217 ns/op             160 B/op          1 allocs/op
 BenchmarkCustomTinylib1-8       10000000               218 ns/op             160 B/op          1 allocs/op
 BenchmarkCustomDchenk2-8         1000000              1590 ns/op            1440 B/op          3 allocs/op
 BenchmarkCustomTinylib2-8        1000000              1779 ns/op            1440 B/op          3 allocs/op
+```
+And on a VM on Google Compute Engine (go1.10.2 linux/amd64; 1 vCPU; 2.75 GB memory):
+```
+BenchmarkCustomDchenk1           5000000               377 ns/op             160 B/op          1 allocs/op
+BenchmarkCustomTinylib1          3000000               383 ns/op             160 B/op          1 allocs/op
+BenchmarkCustomDchenk2            500000              2634 ns/op            1440 B/op          3 allocs/op
+BenchmarkCustomTinylib2           500000              2891 ns/op            1440 B/op          3 allocs/op
 ```
 There is not a significant difference for small objects, but it gets noticeable with larger objects;
 dchenk/msgp performs better than tinylib/msgp. Also, I've noticed many times on my computer that the
