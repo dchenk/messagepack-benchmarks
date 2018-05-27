@@ -10,11 +10,13 @@ type Struct1B struct {
 	InnerStruct  InnerStructB      `msg:"inner_struct"`
 	Bt           uint8             `msg:"bt"`
 	Int          int32             `msg:"int"`
+	Int64        int64             `msg:"i64"`
 }
 
 type InnerStructB struct {
 	Bool    bool    `msg:"bool"`
-	Float32 float32 `msg:"float_32"`
+	Float64 float64 `msg:"f64"`
+	Int8    int8    `msg:"i8"`
 	Uint64  uint64  `msg:"u64"`
 }
 
@@ -32,6 +34,7 @@ type InnerStruct2B struct {
 	SliceUint64 []uint64               `msg:"slice_uint64"`
 	MapStrIntf  map[string]interface{} `msg:"map_str_intf"`
 	Str2        string                 `msg:"string"`
+	F32         float32                `msg:"f32"`
 }
 
 var Struct1B_inst = Struct1B{
@@ -42,8 +45,9 @@ var Struct1B_inst = Struct1B{
 		"lasdhflahsdlfkhlasdf": 4,
 		"c": 1356,
 	},
-	InnerStruct: InnerStructB{true, 213.513, 7869},
+	InnerStruct: InnerStructB{true, 213.513, 23, 7869},
 	Int:         42,
+	Int64:       -27823325,
 }
 
 var Struct2B_inst = Struct2B{
@@ -55,7 +59,7 @@ var Struct2B_inst = Struct2B{
 		"ghijkl":       98,
 		"ghijklghijkl": 8000111333,
 	},
-	InnerStruct: InnerStructB{false, -132.88889, 24},
+	InnerStruct: InnerStructB{false, -132.88889, 104, 24},
 	Float64:     3.14159265359,
 	MapStrSlice: map[string][]int8{
 		"": nil, // We must give a nil, not an allocated empty, slice to make deep equal comparison work.
